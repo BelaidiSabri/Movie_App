@@ -1,0 +1,29 @@
+.movieList{
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.1);
+    grid-area: movieList;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+
+.open__modal__btn{
+    align-self: center;
+    justify-self: center;
+    color: #fff;
+    margin: 50px auto;
+    background-color: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    width: 10%;
+    border-radius: 15px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: 0.1s;
+}
+.open__modal__btn:hover{
+    background-color: rgba(255, 255, 255, 0.218);
+    border: 1px solid rgba(255, 255, 255, 0.171);
+    transition: 0.1s;
+}
