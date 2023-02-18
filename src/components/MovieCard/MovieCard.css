@@ -3,11 +3,11 @@ img{
     width: 100%;
     margin: auto;
     object-fit: cover;
-    border-radius: 5px;
+    
 }
 .movieCard{   
     width: 250px;
-    padding: 0px;
+    padding: 5px;
     margin: 10px;
     height: 600px;
     box-shadow: 5px 8px 25px -9px rgba(255, 255, 255, 0.09);
@@ -33,7 +33,7 @@ h1{
  color: white;
  transition: 0.3s;
 }
-p{
+.movieCard p{
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -72,4 +72,15 @@ i{
     font-weight: 500;
     border-radius: 5px;
     
+}
+.movieCard button{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    cursor: pointer;
+}
+.movieCard button:hover{
+    color: rgba(176, 61, 35, 0.878);
 }

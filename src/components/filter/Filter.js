@@ -1,20 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import '../filter/filter.css'
 
-function Filter({setRate,toggleRate,setSearch,toggleSearch}) {
+function Filter({setRate,toggleRate,toggleSearch}) {
 
-
-useEffect(()=>{
-  document.addEventListener('keydown',detectKeyDown,true)
-},[])  
-const detectKeyDown =(e)=>{
-  if (e.key=='Enter'){
-    return true
-  }
-  else{
-    return false
-  }
-}
 
 const [active,setActive]=useState(false)
 const isActive =()=>{
@@ -24,7 +12,7 @@ const isActive =()=>{
 
   return (
     <div className='filter'>
-       <input type="text" placeholder= " search..." className='filter__input' onChange={(e)=>setSearch(e.target.value)} />
+       <input type="text" placeholder= " search..." className='filter__input' onChange={(e)=>toggleSearch(e.target.value)} />
        <i class="fa-solid fa-magnifying-glass" onClick={toggleSearch} ></i>
        <div className="dropdown">
         <div onClick={isActive} className='dropdown__menu'>

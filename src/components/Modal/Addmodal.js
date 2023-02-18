@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../Modal/Modal.css'
+import { v4 as uuidv4 } from 'uuid';
 
 function Addmodal({movie,setMovie,modal,toggleModal,setFilter,filteredMovie}) {
 
     const add=()=> {setMovie([...movie,
-        {title:title__ref.current.value,
+        {id:uuidv4(), title:title__ref.current.value,
         description:description_ref.current.value,
         posterURL:link__ref.current.value,
         rating:rating__ref.current.value,type:type__ref.current.value}]);
         setFilter([...movie,
-            {title:title__ref.current.value,
+            {id:uuidv4(), title:title__ref.current.value,
             description:description_ref.current.value,
             posterURL:link__ref.current.value,
             rating:rating__ref.current.value,type:type__ref.current.value}])
@@ -22,12 +23,13 @@ function Addmodal({movie,setMovie,modal,toggleModal,setFilter,filteredMovie}) {
     const link__ref=useRef()
     const rating__ref=useRef()
     const type__ref=useRef()
+    
 
    
 
   return (
     <div>
-        {modal && (
+        {modal? (
             <div className="modal">
             <div className="modal__overlay"></div>
             <div className='modal__content'>
@@ -50,7 +52,7 @@ function Addmodal({movie,setMovie,modal,toggleModal,setFilter,filteredMovie}) {
                 </div>
             </div>
         </div>
-        )}
+        ):null}
         
     </div>
   )

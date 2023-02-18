@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../MovieCard/MovieCard.css";
 import StarRatingComponent from "react-star-rating-component";
+import { Link } from "react-router-dom";
 
-function MovieCard({ e }) {
+function MovieCard({ e ,deleteMovie}) {
   return (
     <div className="movieCard">
+      
       <div className="type">{e.type}</div>
-      <img src={e.posterURL} alt={e.title}></img>
+      <Link to={`/MovieDescription/${e.id}`} > <img src={e.posterURL} alt={e.title}></img></Link>
       <div>
         <h1>{e.title}</h1>
         <p>{e.description}</p>
@@ -28,7 +30,8 @@ function MovieCard({ e }) {
           editing="true" /* is component available for editing, default `true` */
         />
       </div>
-    </div>
+      <button onClick={()=>deleteMovie(e.id)}><i title="delete" class="fa-solid fa-trash-can fa-2x"></i></button>
+    </div> 
   );
 }
 
